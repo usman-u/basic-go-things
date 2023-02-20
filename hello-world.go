@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+
+	"github.com/PacktPublishing/Network-Automation-with-Go/ch02/ping"
 )
 
 func printer(data string) {
@@ -101,9 +103,12 @@ func main() {
 	// loopy()
 	// loopy2(12)
 
-	fizzbuzz(21)
+	// fizzbuzz(21)
 
 	// test := []int{20, 5, 12, 4, 2, 55, -1}
 	// bubble_sort(test)
+
+	s := ping.Send()
+	fmt.Println(s)
 
 }
