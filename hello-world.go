@@ -28,8 +28,8 @@ func loopy3() {
 	}
 }
 
-func fizzbuzz(max int) {
-	for i := 1; i < max; i++ {
+func fizzbuzz(high int) {
+	for i := 1; i < high; i++ {
 		output := ""
 		if i%3 == 0 && i%5 == 0 {
 			output = output + "FizzBuzz"
@@ -44,8 +44,52 @@ func fizzbuzz(max int) {
 	}
 }
 
+func loop4(newi string) {
+	// for i := 0; i < max; i++ {
+	// 	fmt.Println(i)
+	// }
+	slice := make([]string, 0)
+	// slice[2] = "second"
+
+	slice = append(slice, newi)
+
+	// fmt.Println("2nd Index: ", slice[2])
+
+	// fmt.Println(slice[2])
+
+	for i := 0; i < len(slice); i++ {
+		fmt.Println("Index", i, ":", slice[i])
+	}
+}
+
+func bubble_sort(data []int) {
+
+	// for i := 0; i < len(data); i++ {
+	// 	fmt.Println(data[i])
+	// }
+
+	swapped := true
+	n := len(data)
+
+	for swapped {
+		swapped = false
+		n = n - 1
+
+		for i := 0; i < n; i++ {
+			if data[i] > data[i+1] {
+				tmp := data[i]
+				data[i] = data[i+1]
+				data[i+1] = tmp
+				swapped = true
+			}
+		}
+
+	}
+	fmt.Println(data)
+}
+
 func main() {
-	const constant_value string = "This is a constant string"
+	// const constant_value string = "This is a constant string"
 
 	// message1 := fmt.Sprint("Hello")
 	// message0 := fmt.Sprint(123)
@@ -56,8 +100,10 @@ func main() {
 
 	// loopy()
 	// loopy2(12)
-	// loopy3()
 
 	fizzbuzz(21)
+
+	// test := []int{20, 5, 12, 4, 2, 55, -1}
+	// bubble_sort(test)
 
 }
