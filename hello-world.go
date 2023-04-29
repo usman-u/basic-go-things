@@ -2,8 +2,6 @@ package main
 
 import (
 	"fmt"
-
-	"github.com/PacktPublishing/Network-Automation-with-Go/ch02/ping"
 )
 
 func printer(data string) {
@@ -90,6 +88,20 @@ func bubble_sort(data []int) {
 	fmt.Println(data)
 }
 
+func insertion_sort(data []string) []string {
+	for i := 0; i < len(data); i++ {
+		current := data[i]
+		index2 := i
+
+		for index2 > 0 && data[index2-1] > current {
+			data[index2] = data[index2-1]
+			index2 = index2 - 1
+		}
+		data[index2] = current
+	}
+	return data
+}
+
 func main() {
 	// const constant_value string = "This is a constant string"
 
@@ -107,8 +119,12 @@ func main() {
 
 	// test := []int{20, 5, 12, 4, 2, 55, -1}
 	// bubble_sort(test)
+	// api()
 
-	s := ping.Send()
-	fmt.Println(s)
-
+	// test := []int{10, 20, 30, 40, 50, 60, 70}
+	data := []string{"Florida", "Georgia", "Delaware", "Alabama"}
+	// result := binary_search(test, 30)
+	fmt.Println(data)
+	result := insertion_sort(data)
+	fmt.Println(result)
 }
