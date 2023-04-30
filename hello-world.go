@@ -102,6 +102,20 @@ func insertion_sort(data []string) []string {
 	return data
 }
 
+func insertion_sort_ints(data []int) []int {
+	for i := 0; i < len(data); i++ {
+		current := data[i]
+		i2 := i
+
+		for i2 > 0 && data[i2-1] > current {
+			data[i2] = data[i2-1]
+			i2 -= 1
+		}
+		data[i2] = current
+	}
+	return data
+}
+
 func main() {
 	// const constant_value string = "This is a constant string"
 
@@ -120,11 +134,12 @@ func main() {
 	// test := []int{20, 5, 12, 4, 2, 55, -1}
 	// bubble_sort(test)
 	// api()
-
-	// test := []int{10, 20, 30, 40, 50, 60, 70}
-	data := []string{"Florida", "Georgia", "Delaware", "Alabama"}
 	// result := binary_search(test, 30)
-	fmt.Println(data)
-	result := insertion_sort(data)
-	fmt.Println(result)
+
+	data_strings := []string{"Florida", "Georgia", "Delaware", "Alabama"}
+	data_ints := []int{10, 2, 31, 1, 21, 3, 21, 100, 2}
+
+	fmt.Println(insertion_sort_ints(data_ints))
+	fmt.Println(insertion_sort(data_strings))
+
 }
